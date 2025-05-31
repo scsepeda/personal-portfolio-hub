@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
+import profileImage from "@assets/76718766b21c13c2938e61b5dcf1a822.jpeg";
 
 export function HeroSection() {
   const { personal } = portfolioData;
@@ -60,11 +61,13 @@ export function HeroSection() {
           
           <div className="flex justify-center">
             <div className="relative">
-              {/* Professional avatar placeholder */}
-              <div className="w-80 h-80 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-2xl">
-                <div className="w-72 h-72 bg-muted rounded-full flex items-center justify-center">
-                  <div className="text-6xl text-muted-foreground">👩‍💻</div>
-                </div>
+              {/* Professional photo */}
+              <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
+                <img 
+                  src={profileImage} 
+                  alt="Samantha Sepeda - Senior Fullstack Developer"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full animate-pulse"></div>
