@@ -6,7 +6,7 @@ export const portfolioData = {
     email: "scsepeda@gmail.com",
     phone: "+65 8307 7475",
     linkedin: "https://linkedin.com/in/scsepeda",
-    github: "#",
+    github: "https://github.com/scsepeda",
     summary: "Results-driven Senior Software Engineer with 8+ years of experience specializing in .NET, Java (Spring Boot), Angular, and cloud technologies (AWS). Proven expertise in designing high-performance web applications, RESTful APIs, and microservices architecture.",
   },
   
