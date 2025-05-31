@@ -90,6 +90,7 @@ async function registerRoutes(app2) {
 
 // server/vite.ts
 import express from "express";
+import { defineConfig as defineConfig2 } from "vite";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import path2 from "path";
@@ -178,10 +179,18 @@ async function setupVite(app2, server) {
     }
   });
 }
+var vite_default = defineConfig2({
+  build: {
+    outDir: "dist/public",
+    // 👈 matches where Express looks
+    emptyOutDir: false
+    // so it doesn't erase server build
+  }
+});
 function serveStatic(app2) {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path2.dirname(__filename);
-  const distPath = path2.resolve(__dirname, "../client/dist");
+  const distPath = path2.resolve(__dirname, "./public");
   app2.use(express.static(distPath));
   app2.get("*", (_req, res) => {
     res.sendFile(path2.join(distPath, "index.html"));

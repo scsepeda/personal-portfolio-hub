@@ -1,4 +1,5 @@
 import express, { type Express } from "express";
+import { defineConfig } from "vite";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import path from "path";
@@ -68,11 +69,18 @@ export async function setupVite(app: Express, server: Server) {
   });
 }
 
+export default defineConfig({
+  build: {
+    outDir: "dist/public", // 👈 matches where Express looks
+    emptyOutDir: false,     // so it doesn't erase server build
+  },
+});
 export function serveStatic(app: express.Express) {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
+  
+  const distPath = path.resolve(__dirname, "./public");
 
-  const distPath = path.resolve(__dirname, "../client/dist");
     app.use(express.static(distPath));
 
     // Send index.html for all other requests (SPA fallback)
