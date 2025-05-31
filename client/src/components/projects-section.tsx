@@ -13,8 +13,8 @@ const projectIcons = {
 const projectGradients = {
   microservices: "from-primary to-accent",
   etl: "from-accent to-primary",
-  devops: "from-green-500 to-blue-500",
-  enterprise: "from-purple-500 to-pink-500",
+  devops: "from-primary to-accent",
+  enterprise: "from-accent to-primary",
 };
 
 export function ProjectsSection() {

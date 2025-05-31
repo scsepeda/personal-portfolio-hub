@@ -38,7 +38,7 @@ export function EducationSection() {
                 <p className="text-lg text-foreground mb-2">{education.school}</p>
                 <p className="text-muted-foreground mb-2">{education.location}</p>
                 <div className="flex items-center space-x-4 mb-6">
-                  <Badge className="bg-yellow-500 hover:bg-yellow-600 text-white">
+                  <Badge className="bg-accent hover:bg-accent/90 text-white">
                     {education.honors}
                   </Badge>
                   <span className="text-muted-foreground">{education.period}</span>
@@ -49,7 +49,7 @@ export function EducationSection() {
                   <div className="space-y-2 text-sm text-muted-foreground">
                     {education.awards.map((award, index) => (
                       <div key={index} className="flex items-center">
-                        <Award className="h-4 w-4 text-yellow-500 mr-2 flex-shrink-0" />
+                        <Award className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
                         <span>{award}</span>
                       </div>
                     ))}

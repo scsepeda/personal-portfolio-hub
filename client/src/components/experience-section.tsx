@@ -37,7 +37,7 @@ export function ExperienceSection() {
                           {job.period}
                         </Badge>
                         {job.current && (
-                          <Badge className="bg-green-500 hover:bg-green-600">
+                          <Badge className="bg-primary hover:bg-primary/90">
                             Current
                           </Badge>
                         )}
@@ -52,7 +52,7 @@ export function ExperienceSection() {
                         <div className="grid md:grid-cols-2 gap-4 text-sm">
                           {job.responsibilities.map((responsibility, idx) => (
                             <div key={idx} className="flex items-start space-x-2">
-                              <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                               <span>{responsibility}</span>
                             </div>
                           ))}
@@ -66,7 +66,7 @@ export function ExperienceSection() {
                         <div className="grid md:grid-cols-3 gap-4 text-sm">
                           {job.achievements.map((achievement, idx) => (
                             <div key={idx} className="bg-muted rounded-lg p-4">
-                              <div className="text-2xl font-bold text-green-600 mb-1">
+                              <div className="text-2xl font-bold text-primary mb-1">
                                 {achievement.metric}
                               </div>
                               <div className="text-muted-foreground">
