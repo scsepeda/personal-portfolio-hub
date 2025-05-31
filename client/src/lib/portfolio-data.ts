@@ -19,20 +19,20 @@ export const portfolioData = {
     ],
     backend: [
       { name: ".NET Core", level: 98 },
-      { name: "Java Spring Boot", level: 90 },
+      { name: "Java Spring Boot", level: 80 },
       { name: "C#", level: 95 },
       { name: "RESTful APIs", level: 97 },
     ],
     cloud: [
       { name: "AWS", level: 88 },
-      { name: "Docker", level: 92 },
-      { name: "Kubernetes", level: 85 },
+      { name: "Docker", level: 90 },
+      { name: "Kubernetes", level: 90 },
       { name: "CI/CD Pipelines", level: 93 },
     ],
     database: [
       { name: "SQL Server", level: 95 },
       { name: "PostgreSQL", level: 90 },
-      { name: "MongoDB", level: 85 },
+      { name: "MySQL", level: 70 },
       { name: "Redis", level: 88 },
     ],
   },
@@ -55,7 +55,7 @@ export const portfolioData = {
       achievements: [
         { metric: "65%", description: "Reduced report generation time using Redis cache optimization" },
         { metric: "45%", description: "Decreased production issues with CI/CD automation" },
-        { metric: "12+", description: "Microservices delivered with 99.9% uptime" },
+        { metric: "15+", description: "Microservices delivered with 99.9% uptime" },
       ],
     },
     {

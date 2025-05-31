@@ -1,68 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 255 255 255; /* white */
-  --foreground: 15 23 42; /* slate-900 */
-  --muted: 248 250 252; /* slate-50 */
-  --muted-foreground: 100 116 139; /* slate-500 */
-  --popover: 255 255 255; /* white */
-  --popover-foreground: 15 23 42; /* slate-900 */
-  --card: 255 255 255; /* white */
-  --card-foreground: 15 23 42; /* slate-900 */
-  --border: 226 232 240; /* slate-200 */
-  --input: 241 245 249; /* slate-100 */
-  --primary: 30 58 138; /* blue-800 */
-  --primary-foreground: 255 255 255; /* white */
-  --secondary: 241 245 249; /* slate-100 */
-  --secondary-foreground: 15 23 42; /* slate-900 */
-  --accent: 59 130 246; /* blue-500 */
-  --accent-foreground: 255 255 255; /* white */
-  --destructive: 220 38 38; /* red-600 */
-  --destructive-foreground: 255 255 255; /* white */
-  --ring: 30 58 138; /* blue-800 */
+  --background: 0 0% 100%; /* pure white */
+  --foreground: 222.2 84% 4.9%; /* slate-900 dark text */
+  --muted: 210 40% 98%; /* slate-50 */
+  --muted-foreground: 215.4 16.3% 46.9%; /* slate-500 */
+  --popover: 0 0% 100%; /* white */
+  --popover-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --card: 0 0% 100%; /* white */
+  --card-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --border: 214.3 31.8% 91.4%; /* slate-200 */
+  --input: 210 40% 98%; /* slate-50 */
+  --primary: 221.2 83.2% 53.3%; /* blue-600 */
+  --primary-foreground: 210 40% 98%; /* white */
+  --secondary: 210 40% 96%; /* slate-100 */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* slate-800 */
+  --accent: 217.2 91.2% 59.8%; /* blue-500 */
+  --accent-foreground: 210 40% 98%; /* white */
+  --destructive: 0 84.2% 60.2%; /* red-500 */
+  --destructive-foreground: 210 40% 98%; /* white */
+  --ring: 221.2 83.2% 53.3%; /* blue-600 */
   --radius: 0.5rem;
+
+  /* Chart colors */
+  --chart-1: 221.2 83.2% 53.3%; /* blue-600 */
+  --chart-2: 212 95% 68%; /* blue-400 */
+  --chart-3: 216 92% 79%; /* blue-300 */
+  --chart-4: 214 95% 93%; /* blue-100 */
+  --chart-5: 210 40% 98%; /* slate-50 */
+
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 100%; /* white */
+  --sidebar-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --sidebar-primary: 221.2 83.2% 53.3%; /* blue-600 */
+  --sidebar-primary-foreground: 210 40% 98%; /* white */
+  --sidebar-accent: 210 40% 96%; /* slate-100 */
+  --sidebar-accent-foreground: 222.2 47.4% 11.2%; /* slate-800 */
+  --sidebar-border: 214.3 31.8% 91.4%; /* slate-200 */
+  --sidebar-ring: 221.2 83.2% 53.3%; /* blue-600 */
 }
 
 .dark {
-  --background: 15 23 42; /* slate-900 */
-  --foreground: 226 232 240; /* slate-200 */
-  --muted: 30 41 59; /* slate-800 */
-  --muted-foreground: 148 163 184; /* slate-400 */
-  --popover: 15 23 42; /* slate-900 */
-  --popover-foreground: 226 232 240; /* slate-200 */
-  --card: 30 41 59; /* slate-800 */
-  --card-foreground: 226 232 240; /* slate-200 */
-  --border: 51 65 85; /* slate-700 */
-  --input: 51 65 85; /* slate-700 */
-  --primary: 59 130 246; /* blue-500 */
-  --primary-foreground: 255 255 255; /* white */
-  --secondary: 30 41 59; /* slate-800 */
-  --secondary-foreground: 226 232 240; /* slate-200 */
-  --accent: 99 102 241; /* indigo-500 */
-  --accent-foreground: 255 255 255; /* white */
-  --destructive: 239 68 68; /* red-500 */
-  --destructive-foreground: 255 255 255; /* white */
-  --ring: 59 130 246; /* blue-500 */
+  --background: 222.2 84% 4.9%; /* slate-900 */
+  --foreground: 210 40% 98%; /* slate-50 */
+  --muted: 217.2 32.6% 17.5%; /* slate-800 */
+  --muted-foreground: 215 20.2% 65.1%; /* slate-400 */
+  --popover: 222.2 84% 4.9%; /* slate-900 */
+  --popover-foreground: 210 40% 98%; /* slate-50 */
+  --card: 222.2 84% 4.9%; /* slate-900 */
+  --card-foreground: 210 40% 98%; /* slate-50 */
+  --border: 217.2 32.6% 17.5%; /* slate-800 */
+  --input: 217.2 32.6% 17.5%; /* slate-800 */
+  --primary: 217.2 91.2% 59.8%; /* blue-500 */
+  --primary-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --secondary: 217.2 32.6% 17.5%; /* slate-800 */
+  --secondary-foreground: 210 40% 98%; /* slate-50 */
+  --accent: 217.2 91.2% 59.8%; /* blue-500 */
+  --accent-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --destructive: 0 62.8% 30.6%; /* red-900 */
+  --destructive-foreground: 210 40% 98%; /* slate-50 */
+  --ring: 217.2 91.2% 59.8%; /* blue-500 */
+
+  /* Chart colors for dark mode */
+  --chart-1: 217.2 91.2% 59.8%; /* blue-500 */
+  --chart-2: 212 95% 68%; /* blue-400 */
+  --chart-3: 216 92% 79%; /* blue-300 */
+  --chart-4: 217.2 32.6% 17.5%; /* slate-800 */
+  --chart-5: 222.2 84% 4.9%; /* slate-900 */
+
+  /* Sidebar colors for dark mode */
+  --sidebar-background: 222.2 84% 4.9%; /* slate-900 */
+  --sidebar-foreground: 210 40% 98%; /* slate-50 */
+  --sidebar-primary: 217.2 91.2% 59.8%; /* blue-500 */
+  --sidebar-primary-foreground: 222.2 84% 4.9%; /* slate-900 */
+  --sidebar-accent: 217.2 32.6% 17.5%; /* slate-800 */
+  --sidebar-accent-foreground: 210 40% 98%; /* slate-50 */
+  --sidebar-border: 217.2 32.6% 17.5%; /* slate-800 */
+  --sidebar-ring: 217.2 91.2% 59.8%; /* blue-500 */
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
+    color: hsl(var(--foreground));
   }
-
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
@@ -72,20 +103,31 @@
   .skill-bar {
     transition: width 1s ease-in-out;
   }
-
   .animate-fade-in {
     animation: fadeIn 0.6s ease-in-out;
   }
-
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
   }
-
   .gradient-text {
     background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Professional utility classes */
+  .bg-neutral-50 {
+    background-color: hsl(210 40% 98%);
+  }
+  .bg-blue-50 {
+    background-color: hsl(214 95% 93%);
+  }
+  .text-blue-600 {
+    color: hsl(221.2 83.2% 53.3%);
+  }
+  .border-neutral-200 {
+    border-color: hsl(214.3 31.8% 91.4%);
   }
 }
 
@@ -110,7 +152,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - refined colors */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -120,10 +162,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--muted-foreground) / 0.6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.8);
 }
