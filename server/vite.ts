@@ -1,4 +1,5 @@
 import express, { type Express } from "express";
+import { fileURLToPath } from "url";
 import fs from "fs";
 import path from "path";
 import { createServer as createViteServer, createLogger } from "vite";
@@ -68,11 +69,14 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: express.Express) {
-  const distPath = path.resolve(__dirname, '../client/dist');
-  app.use(express.static(distPath));
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
-  // Send index.html for all other requests (SPA fallback)
-  app.get('*', (_req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
+  const distPath = path.resolve(__dirname, "../client/dist");
+    app.use(express.static(distPath));
+
+    // Send index.html for all other requests (SPA fallback)
+    app.get('*', (_req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
 }
