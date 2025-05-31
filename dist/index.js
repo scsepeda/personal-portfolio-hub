@@ -90,6 +90,7 @@ async function registerRoutes(app2) {
 
 // server/vite.ts
 import express from "express";
+import { fileURLToPath } from "url";
 import fs from "fs";
 import path2 from "path";
 import { createServer as createViteServer, createLogger } from "vite";
@@ -178,6 +179,8 @@ async function setupVite(app2, server) {
   });
 }
 function serveStatic(app2) {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path2.dirname(__filename);
   const distPath = path2.resolve(__dirname, "../client/dist");
   app2.use(express.static(distPath));
   app2.get("*", (_req, res) => {
