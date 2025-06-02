@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +8,8 @@ import { useMutation } from "@tanstack/react-query";
 import { Mail, Phone, MapPin, Linkedin, Download, Send } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
 import { apiRequest } from "@/lib/queryClient";
+
+const RESUME_URL = "https://drive.google.com/file/d/1q30N8DDOWC9K0gdRVPjLDtaQ42UjMyDn/view?usp=sharing";
 
 interface ContactFormData {
   firstName: string;
@@ -143,10 +144,12 @@ export function ContactSection() {
             
             <div className="mt-8">
               <h4 className="font-semibold mb-4">Download Resume</h4>
-              <Button className="inline-flex items-center">
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </Button>
+              <a href={RESUME_URL} download className="inline-flex items-center">
+                <Button className="inline-flex items-center">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download PDF
+                </Button>
+              </a>
             </div>
           </div>
           

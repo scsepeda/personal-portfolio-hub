@@ -4,6 +4,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "@/hooks/use-theme";
 import { Moon, Sun, Menu, Download } from "lucide-react";
 
+const RESUME_URL = "https://drive.google.com/file/d/1q30N8DDOWC9K0gdRVPjLDtaQ42UjMyDn/view?usp=sharing";
+
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
@@ -68,10 +70,12 @@ export function Navigation() {
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button className="inline-flex items-center">
-              <Download className="mr-2 h-4 w-4" />
-              Resume
-            </Button>
+            <a href={RESUME_URL} download className="inline-flex items-center">
+              <Button className="inline-flex items-center">
+                <Download className="mr-2 h-4 w-4" />
+                Resume
+              </Button>
+            </a>
           </div>
           
           {/* Mobile Menu */}
@@ -101,10 +105,13 @@ export function Navigation() {
                       {item.label}
                     </button>
                   ))}
+                 <a href={RESUME_URL} download>
                   <Button className="mt-8 inline-flex items-center justify-center">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
                   </Button>
+                </a>
+
                 </div>
               </SheetContent>
             </Sheet>
