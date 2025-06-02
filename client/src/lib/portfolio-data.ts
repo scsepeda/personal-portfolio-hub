@@ -40,12 +40,12 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      title: "Senior .NET Engineer",
+      title: "Senior Fullstack Engineer",
       company: "Crédit Agricole CIB",
       location: "Singapore",
       period: "Mar 2020 – Present",
       current: true,
-      description: "Leading development of scalable REST APIs and Web Applications using .NET Core, Angular, Kafka, and PostgreSQL. Building desktop and UI applications for Compliance and Market Risk P&L tracking systems.",
+      description: "Leading development of scalable REST APIs and Web Applications using .NET Core & .NET Framework, Angular, Kafka, and PostgreSQL. Building desktop and UI applications for Compliance and Market Risk P&L tracking systems. Joining competitive hackathons and winning awards for innovative solutions.",
       responsibilities: [
         "Design CI/CD pipelines via GitLab, Docker, Kubernetes, ArgoCD",
         "Maintain backend services using Redis caching and AWS S3",
@@ -56,6 +56,9 @@ export const portfolioData = {
         { metric: "65%", description: "Reduced report generation time using Redis cache optimization" },
         { metric: "45%", description: "Decreased production issues with CI/CD automation" },
         { metric: "15+", description: "Microservices delivered with 99.9% uptime" },
+        { metric: "3rd Place", description: "Successfully presenting and podium finished in company's Gen AI Hackathon" },
+        { metric: "300k", description: "Compliance data rows migrated between data centers" },
+        { metric: "30+", description: "Technical documents written, groomed, reviewed" },
       ],
     },
     {
@@ -71,6 +74,36 @@ export const portfolioData = {
         { metric: "500+", description: "Support tickets closed with 97% satisfaction" },
         { metric: "28%", description: "Improvement in first-call resolution rate" },
         { metric: "40%", description: "Reduction in ticket escalation" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Software Developer Intern",
+      company: "Intellicare",
+      location: "Makati, Philippines",
+      period: "Sep 2017 – Dec 2017",
+      current: false,
+      description: "Developed and maintained internal healthcare management applications using C#, Microsoft Forms, and Java. Implemented user acceptance testing protocols and contributed to frontend development with Foundation framework and HTML. Successfully delivered multiple web applications for streamlining healthcare operations.",
+      responsibilities: [],
+      achievements: [
+        { metric: "3+", description: "Internal healthcare applications developed and maintained" },
+        { metric: "95%", description: "User acceptance testing pass rate for delivered features" },
+        { metric: "100+", description: "Hours of self-learning in C#, Java, and web technologies" }
+      ],
+    },
+    {
+      id: 4,
+      title: "Data Analyst Intern",
+      company: "SGV & Co.",
+      location: "Makati, Philippines",
+      period: "Jun 2017 – Aug 2017",
+      current: false,
+      description: "Analyzed fraud patterns and developed data insights using SQL Server Management Studio and Tableau in the Fraud Technology and Data Science department. Created interactive dashboards for fraud detection metrics and conducted database analysis for risk assessment.",
+      responsibilities: [],
+      achievements: [
+        { metric: "255+", description: "Hours of database analysis and SQL scripting completed" },
+        { metric: "15+", description: "Data visualization dashboards created using Tableau" },
+        { metric: "30%", description: "Improved data processing efficiency through SQL optimization" },
       ],
     },
   ],
@@ -118,7 +151,6 @@ export const portfolioData = {
     honors: "Cum Laude",
     awards: [
       "Accenture Program The Future 2017: 3rd Place",
-      "Gen AI Hackathon: 3rd Place",
       "Best Thesis - Web & Mobile Development Track",
       "Top 1 Dean's Lister",
     ],
