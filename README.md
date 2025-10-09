@@ -15,7 +15,7 @@ Tech stack:
 
 🔹 Hosted on Render
 
-Check it out here: [https://sepedapersonal-portfolio-hub.onrender.com/]
+Check it out here: [https://scsepeda.com/]
 
 Would love any feedback! 💬
 
