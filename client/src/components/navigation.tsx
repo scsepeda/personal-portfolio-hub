@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "@/hooks/use-theme";
 import { Moon, Sun, Menu, Download } from "lucide-react";
 
-const RESUME_URL = "https://docs.google.com/document/d/10UwDzWI8KkenriRw3rfJCuF_tsWQ-Sy0/edit";
+const RESUME_URL = "/Samantha_Sepeda_Resume.pdf";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -70,7 +70,7 @@ export function Navigation() {
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+            <a href={RESUME_URL} download className="inline-flex items-center">
               <Button className="inline-flex items-center">
                 <Download className="mr-2 h-4 w-4" />
                 Resume
@@ -105,7 +105,7 @@ export function Navigation() {
                       {item.label}
                     </button>
                   ))}
-                 <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+                 <a href={RESUME_URL} download>
                   <Button className="mt-8 inline-flex items-center justify-center">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume

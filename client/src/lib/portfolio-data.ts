@@ -7,7 +7,7 @@ export const portfolioData = {
     phone: "+65 8307 7475",
     linkedin: "https://linkedin.com/in/scsepeda",
     github: "https://github.com/scsepeda",
-    summary: "Results-driven Senior Software Engineer with 8+ years of experience specializing in .NET, Java (Spring Boot), Angular, and cloud technologies (AWS). Proven expertise in designing high-performance web applications, RESTful APIs, and microservices architecture. Currently at GIC, building asset servicing applications for public and private markets, after five and a half years at Crédit Agricole CIB where I also served as acting tech lead.",
+    summary: "Results-driven Senior Software Engineer with 8+ years of experience specializing in .NET, Java (Spring Boot), Angular, and cloud technologies (AWS). Proven expertise in designing high-performance web applications, RESTful APIs, and microservices architecture. Currently at GIC, building asset servicing applications for public and private markets, after five and a half years at Crédit Agricole CIB, where I served as acting tech lead for a team of 6–7 while also planning sprints and running retrospectives, covering both the technical and the delivery side.",
   },
   
   skills: {

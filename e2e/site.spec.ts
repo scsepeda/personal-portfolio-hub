@@ -82,10 +82,13 @@ test.describe("links and contact", () => {
     await expect(hero.getByRole("link", { name: "Get In Touch" })).toHaveAttribute("href", /^mailto:/);
   });
 
-  test("resume link opens in a new tab", async ({ page }) => {
-    const resume = page.locator("#contact").getByRole("link", { name: /Download PDF/ });
-    await expect(resume).toHaveAttribute("href", /^https:\/\/docs\.google\.com\/document\//);
-    await expect(resume).toHaveAttribute("target", "_blank");
+  test("resume button downloads the PDF from the site", async ({ page, request }) => {
+    const resume = page.locator("#contact").getByRole("link", { name: "Download Resume" });
+    await expect(resume).toHaveAttribute("href", "/Samantha_Sepeda_Resume.pdf");
+    await expect(resume).toHaveAttribute("download", "");
+    const response = await request.get("/Samantha_Sepeda_Resume.pdf");
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toContain("application/pdf");
   });
 
   test("desktop navigation scrolls to each section", async ({ page, isMobile }) => {

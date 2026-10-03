@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Linkedin, Download, Send } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
 
-const RESUME_URL = "https://docs.google.com/document/d/10UwDzWI8KkenriRw3rfJCuF_tsWQ-Sy0/edit";
+const RESUME_URL = "/Samantha_Sepeda_Resume.pdf";
 
 interface ContactFormData {
   firstName: string;
@@ -114,11 +114,10 @@ export function ContactSection() {
             </div>
             
             <div className="mt-8">
-              <h4 className="font-semibold mb-4">Download Resume</h4>
-              <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+              <a href={RESUME_URL} download className="inline-flex items-center">
                 <Button className="inline-flex items-center">
                   <Download className="mr-2 h-4 w-4" />
-                  Download PDF
+                  Download Resume
                 </Button>
               </a>
             </div>
