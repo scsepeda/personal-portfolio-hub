@@ -62,9 +62,11 @@ test.describe("content", () => {
     await expect(page.locator("#experience")).not.toContainText(/15\+\s*Microservices/);
   });
 
-  test("skills and all four projects render", async ({ page }) => {
+  test("skills and all five projects render", async ({ page }) => {
     await expect(page.locator("#skills")).toContainText(".NET Core");
-    await expect(page.locator("#projects").getByRole("heading", { level: 3 })).toHaveCount(4);
+    await expect(page.locator("#projects").getByRole("heading", { level: 3 })).toHaveCount(5);
+    await expect(page.locator("#projects")).toContainText("ATLAS");
+    await expect(page.locator("#skills")).toContainText("Datadog");
   });
 });
 

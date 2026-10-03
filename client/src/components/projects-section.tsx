@@ -1,9 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Layers, Database, GitBranch, Monitor } from "lucide-react";
+import { Layers, Database, GitBranch, Monitor, Cloud } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
 
 const projectIcons = {
+  platform: <Cloud className="text-4xl" />,
   microservices: <Layers className="text-4xl" />,
   etl: <Database className="text-4xl" />,
   devops: <GitBranch className="text-4xl" />,
@@ -11,6 +12,7 @@ const projectIcons = {
 };
 
 const projectGradients = {
+  platform: "from-accent to-primary",
   microservices: "from-primary to-accent",
   etl: "from-accent to-primary",
   devops: "from-primary to-accent",

@@ -10,6 +10,14 @@ export const portfolioData = {
     summary: "Results-driven Senior Software Engineer with 8+ years of experience specializing in .NET, Java (Spring Boot), Angular, and cloud technologies (AWS). Proven expertise in designing high-performance web applications, RESTful APIs, and microservices architecture. Currently at GIC, building asset servicing applications for public and private markets, after five and a half years at Crédit Agricole CIB, where I served as acting tech lead for a team of 6–7 while also planning sprints and running retrospectives, covering both the technical and the delivery side.",
   },
   
+  // Tools used in recent work, shown as tags under the skill bars.
+  alsoUsing: {
+    frontend: ["JavaScript", "WPF"],
+    backend: ["Entity Framework", "VB.NET", "Python"],
+    cloud: ["AWS SQS", "AWS CloudWatch", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog"],
+    database: ["DynamoDB", "OpenSearch", "Kafka", "SQL Trace"],
+  },
+
   skills: {
     frontend: [
       { name: "Angular", level: 95 },
@@ -50,7 +58,7 @@ export const portfolioData = {
         "Develop REST APIs and services with .NET Core, SQL Server and Entity Framework",
         "Build ETL and batch jobs feeding reporting, asset monitoring and valuation workflows",
         "Maintain pipelines with GitHub Actions, Docker, Kubernetes and Helm, monitored with Datadog",
-        "Migrating ATLAS storage from Azure Storage to AWS (in progress)",
+        "Migrating ATLAS storage from Azure Storage to AWS (in progress): sprint planning, Jira backlog management, and historical data migration research with leads",
         "Code reviews and pair programming to keep coding standards consistent",
       ],
       achievements: [
@@ -137,9 +145,17 @@ export const portfolioData = {
   
   projects: [
     {
+      id: 0,
+      title: "ATLAS Private Markets Platform",
+      description: "Working on ATLAS, GIC's award-winning platform for mid-to-back office private market operations. Migrated Azure connectivity across around 40 microservices to route through the internal network proxy and to use SAS tokens in place of key credentials. Delivered hedge swap transaction creation for private-market investments, and currently migrating storage from Azure to AWS, including sprint planning, Jira backlog management and research for the historical data migration.",
+      technologies: [".NET Core", "SQL Server", "Azure", "AWS", "Kubernetes", "GitHub Actions", "Datadog"],
+      highlights: ["2025-Present", "~40 Microservices"],
+      type: "platform",
+    },
+    {
       id: 1,
       title: "Compliance & Risk Management Platform",
-      description: "Built 12+ microservices powering compliance tools used across 4 departments with 99.9% uptime. Implemented event-driven architecture using Kafka and containerized with Docker/Kubernetes.",
+      description: "Built 12+ microservices powering compliance tools used across 4 departments with 99.9% uptime. Implemented event-driven architecture using Kafka and containerized with Docker/Kubernetes. Served as acting tech lead for a team of 6–7 and completed the handover to Mauritius counterparts.",
       technologies: [".NET Core", "Angular", "Kafka", "PostgreSQL", "Docker", "Kubernetes"],
       highlights: ["2020-2025", "4 Departments"],
       type: "microservices",
@@ -163,7 +179,7 @@ export const portfolioData = {
     {
       id: 4,
       title: "Desktop & Web Applications Suite",
-      description: "Developed comprehensive desktop and UI applications for compliance tracking and P&L systems. Built automated batch jobs for daily reporting and system synchronization.",
+      description: "Developed comprehensive desktop and UI applications for compliance tracking and P&L systems. Built automated batch jobs for daily reporting and system synchronization. Included VB.NET, .NET and WPF applications alongside Orchestrade for Capital Markets P&L.",
       technologies: ["WPF", "Angular", "Entity Framework", "Batch Processing"],
       highlights: ["Daily Reports", "Auto Sync"],
       type: "enterprise",
