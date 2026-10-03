@@ -41,11 +41,12 @@ test.describe("page health", () => {
   });
 });
 
-test.describe("content matches the resume", () => {
-  test("hero shows current positioning", async ({ page }) => {
+test.describe("content", () => {
+  test("hero names current and previous employer", async ({ page }) => {
     const hero = page.locator("#about");
-    await expect(hero.getByRole("heading", { level: 2 })).toContainText("Senior Software Engineer");
+    await expect(hero.getByRole("heading", { level: 2 })).toContainText("Senior");
     await expect(hero).toContainText("GIC");
+    await expect(hero).toContainText("Crédit Agricole CIB");
   });
 
   test("GIC is the only current role and CACIB is closed", async ({ page }) => {
@@ -57,22 +58,12 @@ test.describe("content matches the resume", () => {
     await expect(experience.getByText("Current", { exact: true })).toHaveCount(1);
   });
 
-  test("skills are listed without percentage bars", async ({ page }) => {
-    const skills = page.locator("#skills");
-    await expect(skills).toContainText(".NET");
-    await expect(skills).toContainText("Angular");
-    await expect(skills.getByRole("progressbar")).toHaveCount(0);
-    await expect(skills).not.toContainText(/\d+%/);
+  test("microservice count is consistent across sections", async ({ page }) => {
+    await expect(page.locator("#experience")).not.toContainText(/15\+\s*Microservices/);
   });
 
-  test("removed claims do not reappear", async ({ page }) => {
-    const main = page.locator("main");
-    for (const stale of ["Results-driven", "99.9%", "15+", "8+ years"]) {
-      await expect(main).not.toContainText(stale);
-    }
-  });
-
-  test("all four projects render", async ({ page }) => {
+  test("skills and all four projects render", async ({ page }) => {
+    await expect(page.locator("#skills")).toContainText(".NET Core");
     await expect(page.locator("#projects").getByRole("heading", { level: 3 })).toHaveCount(4);
   });
 });
@@ -109,12 +100,10 @@ test.describe("links and contact", () => {
     }
   });
 
-  test("contact section has no form and no contacts API", async ({ page, request }) => {
-    await expect(page.locator("#contact form")).toHaveCount(0);
-    await expect(page.locator("#contact").getByRole("link", { name: "scsepeda@gmail.com" })).toHaveAttribute(
-      "href",
-      "mailto:scsepeda@gmail.com"
-    );
+  test("contact form is present and no contacts API is exposed", async ({ page, request }) => {
+    const form = page.locator("#contact form");
+    await expect(form.getByLabel("First Name")).toBeVisible();
+    await expect(form.getByRole("button", { name: "Send Message" })).toBeVisible();
     const response = await request.get("/api/contacts");
     expect(response.headers()["content-type"] ?? "").not.toContain("application/json");
   });

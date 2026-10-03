@@ -1,23 +1,21 @@
 # personal-portfolio-hub
+🚀 Just launched my personal portfolio!
 
-Source for my personal site, [scsepeda.com](https://scsepeda.com/).
+I built it using React for the frontend and Express.js for the backend, bundled with Vite for a fast development experience. The project is fullstack, deployed on Render, and includes a simple API alongside a responsive frontend showcasing my work, skills, and contact info.
 
-## Stack
+Tech stack:
 
-- React + TypeScript, bundled with Vite
-- Tailwind CSS with shadcn/ui components
-- Express.js server for the contact form endpoint
+🔹 React + TypeScript
 
-## Editing content
+🔹 Express.js (Node.js)
 
-All site content (summary, skills, experience, projects, education) lives in
-`client/src/lib/portfolio-data.ts`.
+🔹 Vite + ESBuild
 
-## Running locally
+🔹 Drizzle ORM
 
-```bash
-npm install
-npm run dev
-```
+🔹 Hosted on Render
 
-`npm run build` produces the production bundle in `dist/`.
+Check it out here: [https://scsepeda.com/]
+
+Would love any feedback! 💬
+

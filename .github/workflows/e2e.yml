@@ -15,8 +15,6 @@ jobs:
           node-version: '22.x'
           cache: npm
       - run: npm ci
-      # Playwright is installed here until it is added to package.json and the lockfile.
-      - run: npm install --no-save @playwright/test@1
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - name: Type check

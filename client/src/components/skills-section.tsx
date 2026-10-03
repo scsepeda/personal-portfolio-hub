@@ -1,28 +1,64 @@
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 import { Palette, Server, Cloud, Database } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
+
+interface SkillItem {
+  name: string;
+  level: number;
+}
 
 interface SkillCategoryProps {
   title: string;
   icon: React.ReactNode;
-  skills: string[];
+  skills: SkillItem[];
   color: string;
 }
 
 function SkillCategory({ title, icon, skills, color }: SkillCategoryProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-300">
+    <Card ref={ref} className="hover:shadow-lg transition-shadow duration-300">
       <CardContent className="p-6">
         <div className="flex items-center mb-4">
           <div className={`text-2xl ${color} mr-3`}>{icon}</div>
           <h3 className="text-xl font-semibold">{title}</h3>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <Badge key={skill} variant="secondary">
-              {skill}
-            </Badge>
+        <div className="space-y-4">
+          {skills.map((skill, index) => (
+            <div key={skill.name} className="skill-item">
+              <div className="flex justify-between mb-2">
+                <span className="font-medium">{skill.name}</span>
+                <span className="text-sm text-muted-foreground">{skill.level}%</span>
+              </div>
+              <Progress 
+                value={isVisible ? skill.level : 0} 
+                className="h-2"
+                style={{
+                  transition: `all 1s ease-in-out ${index * 0.1}s`,
+                }}
+              />
+            </div>
           ))}
         </div>
       </CardContent>
@@ -37,9 +73,9 @@ export function SkillsSection() {
     <section id="skills" className="py-16 bg-card">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
+          <h2 className="text-4xl font-bold mb-4">Technical Expertise</h2>
           <p className="text-xl text-muted-foreground">
-            What I have used in production work
+            Comprehensive skill set across the full technology stack
           </p>
         </div>
         
@@ -63,7 +99,7 @@ export function SkillsSection() {
             color="text-primary"
           />
           <SkillCategory
-            title="Data & Messaging"
+            title="Database"
             icon={<Database />}
             skills={skills.database}
             color="text-accent"
