@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "@/hooks/use-theme";
 import { Moon, Sun, Menu, Download } from "lucide-react";
 
-const RESUME_URL = "https://drive.google.com/file/d/1q30N8DDOWC9K0gdRVPjLDtaQ42UjMyDn/view?usp=sharing";
+const RESUME_URL = "/Samantha_Sepeda_Resume.pdf";
 
 const navItems = [
   { href: "#about", label: "About" },

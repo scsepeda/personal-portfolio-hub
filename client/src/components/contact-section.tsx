@@ -3,13 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
 import { Mail, Phone, MapPin, Linkedin, Download, Send } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
-import { apiRequest } from "@/lib/queryClient";
 
-const RESUME_URL = "https://drive.google.com/file/d/1q30N8DDOWC9K0gdRVPjLDtaQ42UjMyDn/view?usp=sharing";
+const RESUME_URL = "/Samantha_Sepeda_Resume.pdf";
 
 interface ContactFormData {
   firstName: string;
@@ -21,7 +18,6 @@ interface ContactFormData {
 
 export function ContactSection() {
   const { personal } = portfolioData;
-  const { toast } = useToast();
   const [formData, setFormData] = useState<ContactFormData>({
     firstName: "",
     lastName: "",
@@ -30,36 +26,11 @@ export function ContactSection() {
     message: "",
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Failed to send message",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
-
+  // Opens the visitor's email app with the message pre-filled; nothing is stored on the server.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    contactMutation.mutate(formData);
+    const body = `${formData.message}\n\n${formData.firstName} ${formData.lastName}\n${formData.email}`;
+    window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleInputChange = (
@@ -143,11 +114,10 @@ export function ContactSection() {
             </div>
             
             <div className="mt-8">
-              <h4 className="font-semibold mb-4">Download Resume</h4>
               <a href={RESUME_URL} download className="inline-flex items-center">
                 <Button className="inline-flex items-center">
                   <Download className="mr-2 h-4 w-4" />
-                  Download PDF
+                  Download Resume
                 </Button>
               </a>
             </div>
@@ -218,10 +188,9 @@ export function ContactSection() {
               <Button 
                 type="submit" 
                 className="w-full"
-                disabled={contactMutation.isPending}
               >
                 <Send className="mr-2 h-4 w-4" />
-                {contactMutation.isPending ? "Sending..." : "Send Message"}
+                Send Message
               </Button>
             </form>
           </div>
