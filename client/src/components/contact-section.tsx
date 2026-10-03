@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Linkedin, Download, Send } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
 
-const RESUME_URL = "https://drive.google.com/file/d/1q30N8DDOWC9K0gdRVPjLDtaQ42UjMyDn/view?usp=sharing";
+const RESUME_URL = "https://docs.google.com/document/d/10UwDzWI8KkenriRw3rfJCuF_tsWQ-Sy0/edit";
 
 interface ContactFormData {
   firstName: string;

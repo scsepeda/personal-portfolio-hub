@@ -84,7 +84,7 @@ test.describe("links and contact", () => {
 
   test("resume link opens in a new tab", async ({ page }) => {
     const resume = page.locator("#contact").getByRole("link", { name: /Download PDF/ });
-    await expect(resume).toHaveAttribute("href", /^https:\/\//);
+    await expect(resume).toHaveAttribute("href", /^https:\/\/docs\.google\.com\/document\//);
     await expect(resume).toHaveAttribute("target", "_blank");
   });
 

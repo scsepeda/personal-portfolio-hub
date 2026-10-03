@@ -45,14 +45,16 @@ export const portfolioData = {
       location: "Singapore",
       period: "Sep 2025 – Present",
       current: true,
-      description: "Building and supporting asset servicing applications spanning back and middle office for public- and private-market investments, using .NET Core, SQL Server and Entity Framework. Delivering REST APIs, ETL and batch jobs, and L3 production support for private-investment modules.",
+      description: "Building and supporting ATLAS, GIC's award-winning private markets platform, and asset servicing applications spanning back and middle office, using .NET Core, SQL Server, Entity Framework, Azure and AWS. Delivering REST APIs, ETL and batch jobs, and L3 production support for private-investment modules.",
       responsibilities: [
         "Develop REST APIs and services with .NET Core, SQL Server and Entity Framework",
         "Build ETL and batch jobs feeding reporting, asset monitoring and valuation workflows",
         "Maintain pipelines with GitHub Actions, Docker, Kubernetes and Helm, monitored with Datadog",
+        "Migrating ATLAS storage from Azure Storage to AWS (in progress)",
         "Code reviews and pair programming to keep coding standards consistent",
       ],
       achievements: [
+        { metric: "~40", description: "ATLAS microservices migrated to route Azure connectivity through the internal network proxy and to use SAS tokens in place of key credentials" },
         { metric: "Hedge Swaps", description: "Implemented hedge swap transaction creation for private-market investments, integrated with an upstream investment platform" },
         { metric: "L3", description: "Production support across private-investment modules, from data through services to UI" },
         { metric: "Public + Private", description: "Asset servicing applications covering both public- and private-market investments" },
