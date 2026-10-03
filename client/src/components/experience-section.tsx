@@ -12,7 +12,7 @@ export function ExperienceSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
           <p className="text-xl text-muted-foreground">
-            8+ years of building scalable software solutions
+            Investment and banking technology in Singapore since 2020
           </p>
         </div>
         

@@ -70,7 +70,7 @@ export function Navigation() {
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <a href={RESUME_URL} download className="inline-flex items-center">
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
               <Button className="inline-flex items-center">
                 <Download className="mr-2 h-4 w-4" />
                 Resume
@@ -105,7 +105,7 @@ export function Navigation() {
                       {item.label}
                     </button>
                   ))}
-                 <a href={RESUME_URL} download>
+                 <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
                   <Button className="mt-8 inline-flex items-center justify-center">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume

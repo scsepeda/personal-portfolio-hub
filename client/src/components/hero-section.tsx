@@ -65,7 +65,7 @@ export function HeroSection() {
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
                 <img 
                   src={profileImage} 
-                  alt="Samantha Sepeda - Senior Fullstack Developer"
+                  alt="Portrait of Samantha Sepeda"
                   className="w-full h-full object-cover"
                 />
               </div>

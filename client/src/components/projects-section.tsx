@@ -26,7 +26,7 @@ export function ProjectsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground">
-            Showcase of technical achievements and innovations
+            Selected work from banking and investment technology
           </p>
         </div>
         
