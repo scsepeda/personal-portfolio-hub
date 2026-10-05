@@ -75,7 +75,7 @@ export const portfolioData = {
       location: "Singapore",
       period: "Mar 2020 – Sep 2025",
       current: false,
-      description: "Led development of scalable REST APIs and Web Applications using .NET Core & .NET Framework, Angular, Kafka, and PostgreSQL. Built desktop and UI applications for Compliance and Market Risk P&L tracking systems. Served as acting tech lead on the Compliance Data Hub from Sep 2024 to May 2025, leading decisions such as Kong API gateway onboarding and the design of error management, working with product owners, architects and leads and coordinating DevOps, DBA, infrastructure and platform teams across France, Singapore and Mauritius. Joined competitive hackathons and won awards for innovative solutions.",
+      description: "Led development of scalable REST APIs and Web Applications using .NET Core & .NET Framework, Angular, Kafka, and PostgreSQL. Built desktop and UI applications for Compliance and Market Risk P&L tracking systems. Served as acting tech lead on the Compliance Data Hub from Sep 2024 to May 2025, leading decisions such as Kong API gateway onboarding and the design of a scalable error management dashboard used across multiple ETL pipelines, working with product owners, architects and leads and coordinating DevOps, DBA, infrastructure and platform teams across France, Singapore and Mauritius. Joined competitive hackathons and won awards for innovative solutions.",
       responsibilities: [
         "Design CI/CD pipelines via GitLab, Docker, Kubernetes, ArgoCD",
         "Maintain backend services using Redis caching and AWS S3",
