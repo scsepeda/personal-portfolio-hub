@@ -15,7 +15,24 @@ Tech stack:
 
 🔹 Hosted on Render
 
-Check it out here: [https://scsepeda.com/]
+Check it out here: <https://scsepeda.com/>
 
 Would love any feedback! 💬
+
+## Running locally
+
+Requires Node.js 22.
+
+```bash
+npm install
+npm run dev
+```
+
+The app (API and frontend together) is served at http://localhost:5000. Set the `PORT` environment variable to use a different port.
+
+Other scripts:
+
+- `npm run build` – bundle the client and server into `dist/`
+- `npm start` – run the production build
+- `npm run check` – type-check with TypeScript
 
