@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
 import { Palette, Server, Cloud, Database } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
 
@@ -10,13 +11,14 @@ interface SkillItem {
 }
 
 interface SkillCategoryProps {
+  also: string[];
   title: string;
   icon: React.ReactNode;
   skills: SkillItem[];
   color: string;
 }
 
-function SkillCategory({ title, icon, skills, color }: SkillCategoryProps) {
+function SkillCategory({ title, icon, skills, also, color }: SkillCategoryProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -61,13 +63,25 @@ function SkillCategory({ title, icon, skills, color }: SkillCategoryProps) {
             </div>
           ))}
         </div>
+        {also.length > 0 && (
+          <div className="mt-6 pt-4 border-t border-border">
+            <p className="text-sm text-muted-foreground mb-2">Also using</p>
+            <div className="flex flex-wrap gap-2">
+              {also.map((item) => (
+                <Badge key={item} variant="secondary" className="text-xs">
+                  {item}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
 }
 
 export function SkillsSection() {
-  const { skills } = portfolioData;
+  const { skills, alsoUsing } = portfolioData;
 
   return (
     <section id="skills" className="py-16 bg-card">
@@ -84,24 +98,28 @@ export function SkillsSection() {
             title="Frontend"
             icon={<Palette />}
             skills={skills.frontend}
+            also={alsoUsing.frontend}
             color="text-primary"
           />
           <SkillCategory
             title="Backend"
             icon={<Server />}
             skills={skills.backend}
+            also={alsoUsing.backend}
             color="text-accent"
           />
           <SkillCategory
             title="Cloud & DevOps"
             icon={<Cloud />}
             skills={skills.cloud}
+            also={alsoUsing.cloud}
             color="text-primary"
           />
           <SkillCategory
             title="Database"
             icon={<Database />}
             skills={skills.database}
+            also={alsoUsing.database}
             color="text-accent"
           />
         </div>

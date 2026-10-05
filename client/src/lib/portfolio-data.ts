@@ -10,6 +10,14 @@ export const portfolioData = {
     summary: "Results-driven Senior Software Engineer with 8+ years of experience specializing in .NET, Java (Spring Boot), Angular, and cloud technologies (AWS). Proven expertise in designing high-performance web applications, RESTful APIs, and microservices architecture. Currently at GIC, building asset servicing applications for public and private markets, after five and a half years at Crédit Agricole CIB, where I served as acting tech lead for a team of 6–7 while also planning sprints and running retrospectives, covering both the technical and the delivery side.",
   },
   
+  // Tools used in recent work, shown as tags under the skill bars.
+  alsoUsing: {
+    frontend: ["JavaScript", "WPF"],
+    backend: ["Entity Framework", "VB.NET", "Python", "PingOne Integration"],
+    cloud: ["AWS SQS", "AWS CloudWatch", "AWS EKS", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog", "Azure Blob Storage", "Agentic CI/CD"],
+    database: ["DynamoDB", "OpenSearch", "Kafka", "SQL Trace", "Flyway"],
+  },
+
   skills: {
     frontend: [
       { name: "Angular", level: 95 },
@@ -50,11 +58,14 @@ export const portfolioData = {
         "Develop REST APIs and services with .NET Core, SQL Server and Entity Framework",
         "Build ETL and batch jobs feeding reporting, asset monitoring and valuation workflows",
         "Maintain pipelines with GitHub Actions, Docker, Kubernetes and Helm, monitored with Datadog",
-        "Migrating ATLAS storage from Azure Storage to AWS (in progress)",
+        "Integrate PingOne for user single sign-on, API authentication and authorization, and API-to-API authentication",
+        "Manage database schema migrations with Flyway across SQL Server, Oracle and PostgreSQL",
+        "Apply agentic development and agentic CI/CD workflows in day-to-day delivery",
+        "Migrating ATLAS storage from Azure Storage to AWS (in progress): sprint planning, Jira backlog management, and historical data migration research with leads, covering 25 queues and 22 blob containers in each of four environments",
         "Code reviews and pair programming to keep coding standards consistent",
       ],
       achievements: [
-        { metric: "~40", description: "ATLAS microservices migrated to route Azure connectivity through the internal network proxy and to use SAS tokens in place of key credentials" },
+        { metric: "~40", description: "ATLAS microservices migrated to route Azure connectivity through the internal network proxy and to use SAS tokens in place of key credentials; designed and rolled out in about a month each to meet compliance requirements" },
         { metric: "Hedge Swaps", description: "Implemented hedge swap transaction creation for private-market investments, integrated with an upstream investment platform" },
         { metric: "L3", description: "Production support across private-investment modules, from data through services to UI" },
         { metric: "Public + Private", description: "Asset servicing applications covering both public- and private-market investments" },
@@ -62,19 +73,19 @@ export const portfolioData = {
     },
     {
       id: 1,
-      title: "Senior Fullstack Engineer",
+      title: "Senior Software Engineer to Lead",
       company: "Crédit Agricole CIB",
       location: "Singapore",
       period: "Mar 2020 – Sep 2025",
       current: false,
-      description: "Led development of scalable REST APIs and Web Applications using .NET Core & .NET Framework, Angular, Kafka, and PostgreSQL. Built desktop and UI applications for Compliance and Market Risk P&L tracking systems. Served as acting tech lead on the Compliance Data Hub, working with product owners, architects and leads and coordinating DevOps, DBA, infrastructure and platform teams across France, Singapore and Mauritius. Joined competitive hackathons and won awards for innovative solutions.",
+      description: "Led development of scalable REST APIs and Web Applications using .NET Core & .NET Framework, Angular, Kafka, and PostgreSQL. Built desktop and UI applications for Compliance and Market Risk P&L tracking systems. Served as acting tech lead on the Compliance Data Hub from Sep 2024 to May 2025, leading decisions such as Kong API gateway onboarding and the design of a scalable error management dashboard used across multiple ETL pipelines, working with product owners, architects and leads and coordinating DevOps, DBA, infrastructure and platform teams across France, Singapore and Mauritius. Joined competitive hackathons and won awards for innovative solutions.",
       responsibilities: [
         "Design CI/CD pipelines via GitLab, Docker, Kubernetes, ArgoCD",
         "Maintain backend services using Redis caching and AWS S3",
         "Engineer ETL pipelines using Java and Spark",
         "Code reviews and mentoring junior developers",
         "Backup to the project manager: ran sprint planning and retrospectives",
-        "Handover to Mauritius counterparts with knowledge transfer sessions",
+        "Handover to around 5 Mauritius counterparts over at least a month: 3 classroom-style sessions plus one-to-one knowledge transfer",
         "VB.NET, WPF and Orchestrade for Capital Markets P&L applications",
         "Compliance and market data sources including FactSet, Thomson Reuters and Radar",
       ],
@@ -84,7 +95,7 @@ export const portfolioData = {
         { metric: "45%", description: "Decreased production issues with CI/CD automation" },
         { metric: "12+", description: "Microservices delivered with 99.9% uptime" },
         { metric: "3rd Place", description: "Successfully presenting and podium finished in company's Gen AI Hackathon" },
-        { metric: "300k", description: "Compliance data rows migrated between data centers" },
+        { metric: "300k", description: "Compliance data rows migrated between data centers, plus over 100 GB of file data" },
         { metric: "30+", description: "Technical documents written, groomed, reviewed" },
       ],
     },
@@ -137,9 +148,17 @@ export const portfolioData = {
   
   projects: [
     {
+      id: 0,
+      title: "ATLAS Private Markets Platform",
+      description: "Working on ATLAS, GIC's award-winning platform for mid-to-back office private market operations. Designed and rolled out the migration of Azure connectivity across around 40 microservices to route through the internal network proxy and to use SAS tokens in place of key credentials, to meet compliance requirements. Delivered hedge swap transaction creation for private-market investments, and currently migrating storage from Azure to AWS, including sprint planning, Jira backlog management and research for the historical data migration.",
+      technologies: [".NET Core", "SQL Server", "Azure", "AWS", "Kubernetes", "GitHub Actions", "Datadog"],
+      highlights: ["2025-Present", "~40 Microservices"],
+      type: "platform",
+    },
+    {
       id: 1,
       title: "Compliance & Risk Management Platform",
-      description: "Built 12+ microservices powering compliance tools used across 4 departments with 99.9% uptime. Implemented event-driven architecture using Kafka and containerized with Docker/Kubernetes.",
+      description: "Built 12+ microservices powering compliance tools used across 4 departments with 99.9% uptime. Implemented event-driven architecture using Kafka and containerized with Docker/Kubernetes. Served as acting tech lead for a team of 6–7 and completed the handover to Mauritius counterparts.",
       technologies: [".NET Core", "Angular", "Kafka", "PostgreSQL", "Docker", "Kubernetes"],
       highlights: ["2020-2025", "4 Departments"],
       type: "microservices",
@@ -163,7 +182,7 @@ export const portfolioData = {
     {
       id: 4,
       title: "Desktop & Web Applications Suite",
-      description: "Developed comprehensive desktop and UI applications for compliance tracking and P&L systems. Built automated batch jobs for daily reporting and system synchronization.",
+      description: "Developed comprehensive desktop and UI applications for compliance tracking and P&L systems. Built automated batch jobs for daily reporting and system synchronization. Included VB.NET, .NET and WPF applications alongside Orchestrade for Capital Markets P&L.",
       technologies: ["WPF", "Angular", "Entity Framework", "Batch Processing"],
       highlights: ["Daily Reports", "Auto Sync"],
       type: "enterprise",
