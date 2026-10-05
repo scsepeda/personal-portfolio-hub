@@ -73,7 +73,7 @@ export const portfolioData = {
     },
     {
       id: 1,
-      title: "Senior Fullstack Engineer",
+      title: "Senior Software Engineer to Lead",
       company: "Crédit Agricole CIB",
       location: "Singapore",
       period: "Mar 2020 – Sep 2025",
