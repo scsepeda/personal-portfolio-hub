@@ -14,7 +14,7 @@ export const portfolioData = {
   alsoUsing: {
     frontend: ["JavaScript", "WPF"],
     backend: ["Entity Framework", "VB.NET", "Python"],
-    cloud: ["AWS SQS", "AWS CloudWatch", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog"],
+    cloud: ["AWS SQS", "AWS CloudWatch", "AWS EKS", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog"],
     database: ["DynamoDB", "OpenSearch", "Kafka", "SQL Trace"],
   },
 
