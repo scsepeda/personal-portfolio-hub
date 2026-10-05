@@ -13,9 +13,9 @@ export const portfolioData = {
   // Tools used in recent work, shown as tags under the skill bars.
   alsoUsing: {
     frontend: ["JavaScript", "WPF"],
-    backend: ["Entity Framework", "VB.NET", "Python"],
-    cloud: ["AWS SQS", "AWS CloudWatch", "AWS EKS", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog"],
-    database: ["DynamoDB", "OpenSearch", "Kafka", "SQL Trace"],
+    backend: ["Entity Framework", "VB.NET", "Python", "PingOne Integration"],
+    cloud: ["AWS SQS", "AWS CloudWatch", "AWS EKS", "Azure Storage", "GitHub Actions", "Helm", "OpenShift", "Datadog", "Azure Blob Storage", "Agentic CI/CD"],
+    database: ["DynamoDB", "OpenSearch", "Kafka", "SQL Trace", "Flyway"],
   },
 
   skills: {
